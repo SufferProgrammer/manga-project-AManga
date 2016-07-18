@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>
+				Index
+			</title>			
+			<link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+			<link href="{{ url_for('static', filename = 'css/flat-ui.min.css') }}" rel="stylesheet">
+			<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+			<link href="{{ url_for('static', filename = 'images/web/icon.ico') }}" rel="shortcut icon">
+		</head>
+		<body>
+		<!-- Header Section -->
+		
+			<header id="header">
+				<div class="no-background papper-background navbar navbar-inverse navbar-static-top">
+					<nav class="no-background mod-margin-top mod-margin-bottom navbar navbar-inverse" role="navigation">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-collapse-01">
+									<span class="sr-only">Menu</span>
+								</button>
+								<a href="{{ url_for('index') }}">
+									<img src="{{ url_for('static', filename='images/web/title.png') }}" alt="{{ url_for('static', filename='images/title.png') }}" class="navbar-brand">
+								</a>
+							</div>
+							<div id="menu-collapse-01" class="collapse navbar-collapse">
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="{{ url_for('buildup') }}">Update List</a></li>
+									<li><a href="{{ url_for('buildup') }}">Manga List</a></li>
+									<li><a href="{{ url_for('buildup') }}">Anime List</a></li>
+									<li><a href="{{ url_for('buildup') }}">Project List</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+		
+		<!-- The End of Header Section -->
+		
+		<!-- Content Section -->
+		
+			<section id="Main-body">
+				<div class="container">
+					<div class="row">
+						<div class="left-navi">
+							<div class="container">
+								<div class="col-md-3 col-lg-3 papper-background">
+									<table class="table table-hover">
+										<caption><h3 class="text-center">Latest Manga Release</h3></caption>
+										<tbody>
+											<tr><td><a href="#">Aimanee Chapter 04</a></td></tr>
+											<tr><td><a href="#">Gin no kanojo kin no kanojo Episode 02</a></td></tr>
+											<tr><td><a href="#">Ika Musume Episode 20</a></td></tr>
+											<tr><td><a href="#">Kanojo ga flag wo oraretara Episode 10 </a></td></tr>
+										<tbody>
+									</table>
+								</div>
+								<div class="main-list">
+									<div class="col-md-8 col-lg-8 col-md-push-1 papper-background">
+										<h3 class="mod-border-bottom text-center">Latest Anime Release</h3>
+										<div class="col-sm-12">
+											<img src="{{ url_for('static', filename='images/web/dev1.jpg') }}" class="img-thumbnail img-responsive">
+											<img src="{{ url_for('static', filename='images/web/dev2.jpg') }}" class="img-thumbnail img-responsive">
+											<img src="{{ url_for('static', filename='images/web/dev3.jpg') }}" class="img-thumbnail img-responsive">
+											<img src="{{ url_for('static', filename='images/web/dev4.jpg') }}" class="img-thumbnail img-responsive">
+											<img src="{{ url_for('static', filename='images/web/dev5.jpg') }}" class="img-thumbnail img-responsive">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		
+		<!-- The end of content section -->
+		<!-- JS Section -->
+		
+			<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/video.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/flat-ui.min.js') }}"></script>
+			<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+		
+		<!-- The end of JS section -->
+		
+		</body>
+	<html>
