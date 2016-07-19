@@ -26,19 +26,26 @@ body{
 	margin: 0;
 }
 
-/*modified header padding and margin */
+/*modified stuff */
 
 .mod-padding-top{
 	padding-top: 20px;
 }
 
 .mod-margin-top{
-	margin-top: 20px;
+	margin-top: 15px;
 }
 .mod-margin-bottom{
 	margin-bottom: 10px;
 }
 
+.mod-margin-top-menu{
+	margin-top: 120px;
+}
+
+.mod-fixed{
+	position: fixed;
+}
 /*modified bootstrap class css component*/
 
 .navbar-default{
@@ -53,6 +60,11 @@ body{
 	box-shadow: 0.5px 1.5px 12.5px 5.5px #fff;
 }
 
+.lapis-lazuli-background{
+	background-color: #E2B13C;
+	box-shadow: 0.5px 1.5px 12.5px 5.5px #E2B13C;
+}
+
 /*border modif*/
 
 .mod-border{
@@ -65,3 +77,36 @@ body{
 .mod-border-bottom{
 	border-bottom: 2px black;
 }
+
+/*meda queris for some little stuff*/
+
+@media (min-width: 1px) and (max-width: 991px) {
+	.mod-fixed{
+		position: relative;
+	}
+}
+
+/*@media (min-width: 51px) and (max-width: 768px) {
+	.mod-fixed{
+		position: relative;
+	}
+}
+
+@media (min-width: 518px) and (max-width: 787px) {
+	.mod-fixed{
+		position:relative;
+	}
+} 
+
+@media (min-width: 359px) and (max-width: 415px) {
+	.mod-fixed{
+		position: relative;
+	}
+}
+
+@media (min-width: 319px) and (max-width: 505px) {
+	.mod-fixed{
+		position:relative;
+	}
+}
+*/
