@@ -1,2 +1,7 @@
 .idea/
 __pycache__/
+encoder.py
+test.py
+Handler/Database
+test.mp4
+test2.mkv
