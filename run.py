@@ -29,4 +29,4 @@ def buildup():
     return 'Under Building'
 
 if __name__=='__main__':
-    app.run(debug=True, port=7720)
+    app.run()
