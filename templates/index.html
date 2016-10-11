@@ -4,145 +4,93 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>
 				Index
-			</title>			
-			<link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-			<link href="{{ url_for('static', filename = 'css/flat-ui.min.css') }}" rel="stylesheet">
+			</title>
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<link href="{{ url_for('static', filename = 'css/materialize.min.css') }}" rel="stylesheet">
 			<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
 			<link href="{{ url_for('static', filename = 'images/web/icon.png') }}" rel="shortcut icon">
 		</head>
 		<body>
-		<!-- Header Section -->
-		
-			<header id="header">
-				<div class="no-background lapis-lazuli-background navbar navbar-inverse navbar-fixed-top">
-					<nav class="no-background mod-margin-top mod-margin-bottom navbar navbar-inverse" role="navigation">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-collapse-01">
-									<span class="sr-only">Menu</span>
-								</button>
-								<a href="{{ url_for('index') }}">
-									<img src="{{ url_for('static', filename='images/web/title.png') }}" alt="{{ url_for('static', filename='images/title.png') }}" class="navbar-brand">
-								</a>
-							</div>
-							<div id="menu-collapse-01" class="collapse navbar-collapse">
-								<ul class="nav navbar-nav navbar-right">
-									<li><a href="{{ url_for('buildup') }}">Update List</a></li>
-									<li><a href="{{ url_for('buildup') }}">Manga List</a></li>
-									<li><a href="{{ url_for('buildup') }}">Anime List</a></li>
-									<li><a href="{{ url_for('buildup') }}">Project List</a></li>
-								</ul>
-							</div>
-						</div>
-					</nav>
-				</div>
-			</header>
-		
-		<!-- The End of Header Section -->
-		
-		<!-- Content Section -->
-		
-			<section id="Main-body">
-				<div class="container">
-					<div class="row">
-						<div class="mod-margin-top-menu">
-							<div class="container">
-								<div class="col-md-2 col-lg-2 col-md-push-1 mod-fixed papper-background">
-									<table class="table table-hover">
-										<caption><h4 class="text-center">Latest Manga Release</h4></caption>
-										<tbody>
-											<tr><td><a href="#">Aimanee Chapter 04</a></td></tr>
-											<tr><td><a href="#">Gin no kanojo kin no kanojo Episode 02</a></td></tr>
-											<tr><td><a href="#">Ika Musume Episode 20</a></td></tr>
-											<tr><td><a href="#">Kanojo ga flag wo oraretara Episode 10 </a></td></tr>
-										<tbody>
-									</table>
-								</div>
-								<div class="main-list">
-									<div class="col-md-8 col-lg-8 col-md-push-3 papper-background">
-										<h3 class="mod-border-bottom text-center">Latest Anime Release</h3>
-										<ul class="media-list">
-											<li class="media">
-												<div class="media-left media-middle">
-													<a href="#">
-														<img src="{{ url_for('static', filename='images/web/dev1.jpg') }}" class="img-thumbnail" width="200" height="116">
-													</a>
-												</div>
-												<div class="media-body">
-													<h5 class="media-heading">Trial</h5>
-													<p>
-														Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,													</p>
-												</div>
-											</li>
-											<li class="media">
-												<div class="media-left media-middle">
-													<a href="#">
-														<img src="{{ url_for('static', filename='images/web/dev2.jpg') }}" class="img-thumbnail" width="200" height="116">
-													</a>
-												</div>
-												<div class="media-body">
-													<h5 class="media-heading">Trial</h5>
-													<p>
-														Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,													</p>
-													</p>
-												</div>
-											</li>
-											<li class="media">
-												<div class="media-left media-middle">
-													<a href="#">
-														<img src="{{ url_for('static', filename='images/web/dev3.jpg') }}" class="img-thumbnail" width="200" height="116">
-													</a>
-												</div>
-												<div class="media-body">
-													<h5 class="media-heading">Trial</h5>
-													<p>
-														Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,													</p>
-													</p>
-												</div>
-											</li>
-											<li class="media">
-												<div class="media-left media-middle">
-													<a href="#">
-														<img src="{{ url_for('static', filename='images/web/dev4.jpg') }}" class="img-thumbnail" width="200" height="116">
-													</a>
-												</div>
-												<div class="media-body">
-													<h5 class="media-heading">Trial</h5>
-													<p>
-														Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,													</p>
-													</p>
-												</div>
-											</li>
-											<li class="media">
-												<div class="media-left media-middle">
-													<a href="#">
-														<img src="{{ url_for('static', filename='images/web/dev5.jpg') }}" class="img-thumbnail" width="200" height="116">
-													</a>
-												</div>
-												<div class="media-body">
-													<h5 class="media-heading">Trial</h5>
-													<p>
-														Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,													</p>
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		
-		<!-- The end of content section -->
-		<!-- JS Section -->
-		
+        <header>
+            <nav class="orange lighten-2 z-depth-2">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <a href="#" data-activates="sidemed" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <ul class="right hide-on-med-and-down">
+                                <li>
+                                    <form>
+                                        <div class="input-field">
+                                            <input id="searh_anim" type="text" class="validate">
+                                            <label for="searh_anim"><i class="material-icons">search</i></label>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                            <ul class="side-nav" id="meh">
+                                <li><a href="/">meh</a></li>
+                                <li><a href="/">meh</a></li>
+                                <li><a href="/">meh</a></li>
+                                <li><a href="/">meh</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="side-nav fixed orange lighten-3 z-depth-3" id="sidemed">
+                <div class=" no-hover">
+                    <a href="/" class="center-align">
+                        <img src="{{ url_for('static', filename='images/web/webicon.png') }}" class="responsive-img">
+                    </a>
+                </div>
+                <div>
+                    <ul class="center-align">
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li><a href="#">Anime List</a></li>
+                        <li><a href="#">Manga List</a></li>
+                        <li><a href="#">Latest Manga Update</a></li>
+                        <li><a href="#">Latest Anime Update</a></li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <article>
+            <div>
+                <section class="col s12">
+                    <div class="row">
+                        <div class="parallax-container">
+                            <div class="parallax"><img src="{{ url_for('static', filename='images/web/dev1.jpg') }}"></div>
+                        </div>
+                        <div class="section white z-depth-3">
+                            <div class="row container">
+                                <div class="col s12 push-s2">
+                                    <h2 class="header">Oni chichi</h2>
+                                    <p class="grey-text text-darken-3 lighten-3">
+                                        <blockquote>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis, lorem eget tempus maximus, neque sem malesuada purus, vel varius leo lacus at urna. Mauris id leo velit. Etiam egestas pellentesque erat eget pulvinar. Quisque sollicitudin nulla neque, ac maximus est mattis a. Aliquam tincidunt viverra vestibulum. Phasellus faucibus iaculis orci. Donec quis tortor cursus, laoreet enim et, iaculis mauris. Sed rutrum ipsum in sagittis lacinia. Pellentesque condimentum sit amet metus sit amet mollis. Praesent et nibh libero. Praesent sed volutpat dolor, a luctus libero. Suspendisse viverra, ex laoreet laoreet ultricies, odio dui bibendum neque, at suscipit neque augue non dui. Duis ex erat, bibendum a justo quis, vulputate tristique magna. Integer malesuada scelerisque molestie. Pellentesque ornare dui nunc, consectetur ullamcorper nibh bibendum facilisis. Donec ac diam nisl.\
+                                        </blockquote>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="parallax-container">
+                            <div class="parallax"><img src="{{ url_for('static', filename='images/web/parallax2.jpg') }}"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
 			<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/video.js') }}"></script>
-			<script src="{{ url_for('static', filename='js/flat-ui.min.js') }}"></script>
-			<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-		
+			<script src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
+		    <script src="{{ url_for('static', filename = 'js/mine.js') }}"></script>
 		<!-- The end of JS section -->
 		
 		</body>
