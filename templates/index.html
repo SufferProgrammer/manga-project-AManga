@@ -1,97 +1,115 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>
-				Index
-			</title>
-            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-			<link href="{{ url_for('static', filename = 'css/materialize.min.css') }}" rel="stylesheet">
-			<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
-			<link href="{{ url_for('static', filename = 'images/web/icon.png') }}" rel="shortcut icon">
-		</head>
-		<body>
-        <header>
-            <nav class="orange lighten-2 z-depth-2">
-                <div class="nav-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <a href="#" data-activates="sidemed" class="button-collapse"><i class="material-icons">menu</i></a>
-                            <ul class="right hide-on-med-and-down">
-                                <li>
-                                    <form>
-                                        <div class="input-field">
-                                            <input id="searh_anim" type="text" class="validate">
-                                            <label for="searh_anim"><i class="material-icons">search</i></label>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-                            <ul class="side-nav" id="meh">
-                                <li><a href="/">meh</a></li>
-                                <li><a href="/">meh</a></li>
-                                <li><a href="/">meh</a></li>
-                                <li><a href="/">meh</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <section>
-            <div class="side-nav fixed orange lighten-3 z-depth-3" id="sidemed">
-                <div class=" no-hover">
-                    <a href="/" class="center-align">
-                        <img src="{{ url_for('static', filename='images/web/webicon.png') }}" class="responsive-img">
-                    </a>
-                </div>
-                <div>
-                    <ul class="center-align">
-                        <li>
-                            <div class="divider"></div>
-                        </li>
-                        <li><a href="#">Anime List</a></li>
-                        <li><a href="#">Manga List</a></li>
-                        <li><a href="#">Latest Manga Update</a></li>
-                        <li><a href="#">Latest Anime Update</a></li>
-                        <li>
-                            <div class="divider"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        {% include 'head-property.html' %}
         <article>
             <div>
                 <section class="col s12">
                     <div class="row">
                         <div class="parallax-container">
-                            <div class="parallax"><img src="{{ url_for('static', filename='images/web/dev1.jpg') }}"></div>
+                            <div class="parallax"><img src="{{ url_for('static', filename='images/web/parallax2.jpg') }}"></div>
                         </div>
-                        <div class="section white z-depth-3">
+                        <div class="section white">
                             <div class="row container">
-                                <div class="col s12 push-s2">
-                                    <h2 class="header">Oni chichi</h2>
-                                    <p class="grey-text text-darken-3 lighten-3">
-                                        <blockquote>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis, lorem eget tempus maximus, neque sem malesuada purus, vel varius leo lacus at urna. Mauris id leo velit. Etiam egestas pellentesque erat eget pulvinar. Quisque sollicitudin nulla neque, ac maximus est mattis a. Aliquam tincidunt viverra vestibulum. Phasellus faucibus iaculis orci. Donec quis tortor cursus, laoreet enim et, iaculis mauris. Sed rutrum ipsum in sagittis lacinia. Pellentesque condimentum sit amet metus sit amet mollis. Praesent et nibh libero. Praesent sed volutpat dolor, a luctus libero. Suspendisse viverra, ex laoreet laoreet ultricies, odio dui bibendum neque, at suscipit neque augue non dui. Duis ex erat, bibendum a justo quis, vulputate tristique magna. Integer malesuada scelerisque molestie. Pellentesque ornare dui nunc, consectetur ullamcorper nibh bibendum facilisis. Donec ac diam nisl.\
-                                        </blockquote>
-                                    </p>
+                                <div class="col s12 push-l2">
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="{{ url_for('static', filename='images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <p>Oni chichi</p>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href="/">Download</a>
+                                                    <a href="/">Watch</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="parallax-container">
-                            <div class="parallax"><img src="{{ url_for('static', filename='images/web/parallax2.jpg') }}"></div>
                         </div>
                     </div>
                 </section>
             </div>
         </article>
-			<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-			<script src="{{ url_for('static', filename='js/video.js') }}"></script>
-			<script src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
-		    <script src="{{ url_for('static', filename = 'js/mine.js') }}"></script>
-		<!-- The end of JS section -->
-		
-		</body>
-	<html>
+        {% include 'foot-property.html' %}
