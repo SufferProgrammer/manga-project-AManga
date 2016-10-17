@@ -56,6 +56,14 @@ def manga():
     page = 'Manga Session'
     return render_template('manga.html', page = page)
 
+@app.route('/private/<key>')
+def private(key):
+    keyMain = 'piji-pirma'
+    if key == keyMain:
+        return render_template('private.html')
+    else:
+        return ('this is forbidden and private pages')
+
 @app.route('/build')
 def buildup():
     return 'Under Building'
