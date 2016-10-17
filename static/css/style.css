@@ -1,7 +1,12 @@
-.z-indexwith-cus1{
-    z-index: 2;
-    padding: 25% 0;
-}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 
 input[type="text"] {
     padding: initial;
@@ -9,7 +14,7 @@ input[type="text"] {
 }
 
 .input-field input[type=text]:focus {
-    color: black;
+    color: white;
 }
 
 cus-col:focus{
@@ -34,13 +39,36 @@ padd-top{
 
 .parallax-container{
     width: 100%;
-    height: 16rem;
+    height: 25rem;
 }
 
-.no-bottom{
+.mylayers{
+    background-color: rgba(0, 0, 0, 0.45);
+}
 
+.text-mod{
+    font-family: 'Bungee Inline', cursive;
+    color: white;
+    font-size: 600%;
 }
 
 .mypadding{
     padding-top: 0;
+}
+
+.push-top{
+    padding-top: 15rem;
+}
+
+@media (min-width: 1px) and (max-width: 992px) {
+   .text-cent{
+        text-align: center;
+    }
+}
+
+@media (min-width: 1px) and (max-width: 992px) {
+   .push-top{
+        padding-top: 0px;
+        text-align: center;
+    }
 }

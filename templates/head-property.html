@@ -4,25 +4,26 @@
 			<meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>
-				AManga
+			    {{ page }} | AManga
 			</title>
             <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
 			<link href="{{ url_for('static', filename = 'css/materialize.min.css') }}" rel="stylesheet">
 			<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
 			<link href="{{ url_for('static', filename = 'images/web/icon.png') }}" rel="shortcut icon">
 		</head>
 		<body>
         <header>
-            <nav class="grey darken-3 z-depth-2">
+            <nav class="green z-depth-2">
                 <div class="nav-wrapper">
                     <div class="container">
                         <div class="row">
-                            <a href="#" data-activates="sidemed" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <a href="/" data-activates="sidemed" class="button-collapse"><i class="material-icons">menu</i></a>
                             <ul class="right hide-on-med-and-down">
                                 <li>
-                                    <form>
+                                    <form method="get" action="/search">
                                         <div class="input-field">
-                                            <input id="searh_anim" type="text" class="validate">
+                                            <input id="searh_anim" type="text" class="validate" name="s">
                                             <label for="searh_anim"><i class="material-icons">search</i></label>
                                         </div>
                                     </form>
@@ -34,7 +35,7 @@
             </nav>
         </header>
         <section>
-            <div class="side-nav fixed grey darken-2 z-depth-3" id="sidemed">
+            <div class="side-nav fixed green lighten-2 z-depth-4" id="sidemed">
                 <div class=" no-hover">
                     <a href="/" class="center-align">
                         <img src="{{ url_for('static', filename='images/web/webicon.png') }}" class="responsive-img">
@@ -45,97 +46,27 @@
                         <li>
                             <div class="divider"></div>
                         </li>
-                        <li class="header left-align white"><div class="container">Main Menu</div></li>
-                        <li><a href="#">Anime List</a></li>
-                        <li><a href="#">Manga List</a></li>
+                        <li class="header left-align white"><div class="container">Menu</div></li>
+                        <li><a href="/anime">Anime List</a></li>
+                        <li><a href="/manga">Manga List</a></li>
+                        <li><a href="#">Latest News</a></li>
                         <li><a href="#">Latest Manga Update</a></li>
-                        <li><a href="#">Latest Anime Update</a></li>
+                        <li><a href="#">Latest Anime Release</a></li>
                         <li>
                             <div class="divider"></div>
                         </li>
                         <li class="hide-on-large-only">
-                            <form>
+                            <form method="get" action="/search">
                                 <div class="input-field">
-                                    <input id="search" type="search" placeholder="Search">
+                                    <input id="search" type="search" placeholder="Search" name="s">
                                 </div>
                             </form>
                         </li>
-                        <li class="divider hide-on-large-only"></li>
-                        <li class="header left-align white"><div class="container">Collaboration With</div></li>
-                        <li>
-                            <div class="row">
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                                <div class="col s6">
-                                    <div class="chip">
-                                        <img src="{{ url_for('static', filename='images/web/icon.png') }}" alt="Contact Person">
-                                        Jane Doe
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <li class="header left-align white"><div class="container">Team</div></li>
+                        <li><a href="/">Admin</a></li>
+                        <li><a href="/">Report</a></li>
+                        <li><a href="/">Contact Us</a></li>
                         <li class="divider"></li>
-                        <li class="header left-align white"><div class="container">Powered By</div></li>
-                        <li>
-                            <div class="col s6">
-                                <div class="chip">
-                                    <img src="http://materializecss.com/images/favicon/apple-touch-icon-152x152.png" alt="Contact Person">
-                                    Materialize
-                                </div>
-                            </div>
-                            <div class="col s6">
-                                <div class="chip">
-                                    <img src="{{ url_for('static', filename = 'images/web/powered.png') }}" alt="Contact Person">
-                                    Python3.5
-                                </div>
-                            </div>
-                            <div class="col s6">
-                                <div class="chip">
-                                    <img src="{{ url_for('static', filename = 'images/web/powered2.png') }}" alt="Contact Person">
-                                    Flask 0.11.11
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,77 @@
+{% include 'head-property.html' %}
+        <article>
+            <div>
+                <section class="col s12">
+                    <div class="row">
+                        <div>
+                            <div class="parallax-container mylayers">
+                                <a href="/"><p class="text-mod center-align">AManga</p></a>
+                                <div class="parallax"><img src="{{ url_for('static', filename='images/web/dev2.jpg') }}"></div>
+                            </div>
+                        </div>
+                        <div class="section white">
+                            <div class="row container">
+                                <div class="col s12 push-l2">
+                                    <h3 class="center-align">Post About "{{ result }}"</h3>
+                                    <div class="col s12 l4">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ url_for('static', filename = 'images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-content">
+                                                <span class="card-title activator grey-text text-darken-4">Ano natsu<i class="material-icons right">more_vert</i></span>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#">Read</a>
+                                                <a href="#">Download</a>
+                                            </div>
+                                            <div class="card-reveal">
+                                                <span class="card-title grey-text text-darken-4">Ano natsu de matteiru<i class="material-icons right">close</i></span>
+                                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 l4">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ url_for('static', filename = 'images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-content">
+                                                <span class="card-title activator grey-text text-darken-4">Clannad s2<i class="material-icons right">more_vert</i></span>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#">Read</a>
+                                                <a href="#">Download</a>
+                                            </div>
+                                            <div class="card-reveal">
+                                                <span class="card-title grey-text text-darken-4">Clannad season 2<i class="material-icons right">close</i></span>
+                                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 l4">
+                                        <div class="card">
+                                            <div class="card-image waves-effect waves-block waves-light">
+                                                <img class="activator" src="{{ url_for('static', filename = 'images/web/parallax.jpg') }}">
+                                            </div>
+                                            <div class="card-content">
+                                                <span class="card-title activator grey-text text-darken-4">Ano Hana<i class="material-icons right">more_vert</i></span>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#">Read</a>
+                                                <a href="#">Download</a>
+                                            </div>
+                                            <div class="card-reveal">
+                                                <span class="card-title grey-text text-darken-4">Ano Hi no Mita Hana<i class="material-icons right">close</i></span>
+                                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+{% include 'foot-property.html' %}
