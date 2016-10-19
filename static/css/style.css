@@ -60,6 +60,42 @@ padd-top{
     padding-top: 15rem;
 }
 
+.lilspace{
+    left: 5px;
+}
+
+.offline{
+    color: #000000;
+}
+
+.youtube{
+    color: red;
+}
+
+.gplus{
+    color: #ff3d00;
+}
+
+.skype{
+    color: #0288d1;
+}
+
+.insta{
+    color: #cd486b;
+}
+
+.twit{
+    color: #4fc3f7;
+}
+
+.wassap{
+    color: #00c853;
+}
+
+.online{
+    color: #64dd17;
+}
+
 @media (min-width: 1px) and (max-width: 992px) {
    .text-cent{
         text-align: center;

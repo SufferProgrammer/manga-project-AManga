@@ -26,47 +26,63 @@ def errorpage(e):
 
 @app.errorhandler(403)
 def forbiddenpage(e):
-    page = 'Forbidden'
-    return render_template('dame.html', page = page), 403
+    return redirect(url_for('index'))
 
 @app.route('/')
 def index():
     page = 'Index'
-    return render_template('index.html', page = page)
+    image = 'images/web/dev1.jpg'
+    return render_template('index.html', page = page, image = image)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    image = 'images/web/dev2.jpg'
     if request.method == 'GET':
         whatToSearch = request.args.get('s')
         if whatToSearch == '':
             return redirect(url_for('index'))
         elif whatToSearch != None:
             page = 'Search'
-            return render_template('search.html', result = whatToSearch, page = page)
+            return render_template('search.html', result = whatToSearch, page = page, image = image)
         else:
             return redirect(url_for('index'))
 
 @app.route('/anime')
 def anime():
     page = 'Anime Session'
-    return render_template('anime.html', page = page)
+    image = 'images/web/dev5.jpg'
+    return render_template('anime.html', page = page, image = image)
 
 @app.route('/manga')
 def manga():
     page = 'Manga Session'
-    return render_template('manga.html', page = page)
+    image = 'images/web/parallax2.jpg'
+    return render_template('manga.html', page = page, image = image)
 
-@app.route('/private/<key>')
-def private(key):
-    keyMain = 'piji-pirma'
-    if key == keyMain:
-        return render_template('private.html')
-    else:
-        return ('this is forbidden and private pages')
+@app.route('/anime/latest')
+def animlatest():
+    page = 'Latest Anime'
+    image = 'images/web/parallax.jpg'
+    'Put something to make anime list is in sequence from latest update (this will go to database query)'
+    return render_template('anime.html', page = page, image = image)
 
-@app.route('/build')
-def buildup():
-    return 'Under Building'
+@app.route('/manga/latest')
+def manglatest():
+    page = 'Latest Manga'
+    image = 'images/web/parallax.jpg'
+    'Put something to make manga list is in sequence from latest update (this will go to database query)'
+    return render_template('anime.html', page = page, image = image)
 
+@app.route('/news')
+def news():
+    page = 'News Info'
+    image = 'images/web/dev2.jpg'
+    return render_template('news.html', page = page, image = image)
+
+@app.route('/admin/list')
+def adminlist():
+    page = 'Admin list'
+    image = 'images/web/dev4.jpg'
+    return render_template('adminlist.html', page = page, image = image)
 if __name__=='__main__':
     app.run(debug=True)

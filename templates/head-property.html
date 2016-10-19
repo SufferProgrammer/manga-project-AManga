@@ -35,9 +35,9 @@
             </nav>
         </header>
         <section>
-            <div class="side-nav fixed green lighten-2 z-depth-4" id="sidemed">
+            <div class="side-nav fixed grey darken-1 z-depth-4" id="sidemed">
                 <div class=" no-hover">
-                    <a href="/" class="center-align">
+                    <a href="/" class="center-align" id="show-side">
                         <img src="{{ url_for('static', filename='images/web/webicon.png') }}" class="responsive-img">
                     </a>
                 </div>
@@ -49,9 +49,9 @@
                         <li class="header left-align white"><div class="container">Menu</div></li>
                         <li><a href="/anime">Anime List</a></li>
                         <li><a href="/manga">Manga List</a></li>
-                        <li><a href="#">Latest News</a></li>
-                        <li><a href="#">Latest Manga Update</a></li>
-                        <li><a href="#">Latest Anime Release</a></li>
+                        <li><a href="/news">Latest News</a></li>
+                        <li><a href="/manga/latest">Latest Manga Update</a></li>
+                        <li><a href="/anime/latest">Latest Anime Release</a></li>
                         <li>
                             <div class="divider"></div>
                         </li>
@@ -63,10 +63,8 @@
                             </form>
                         </li>
                         <li class="header left-align white"><div class="container">Team</div></li>
-                        <li><a href="/">Admin</a></li>
+                        <li><a href="/admin/list">Admin</a></li>
                         <li><a href="/">Report</a></li>
-                        <li><a href="/">Contact Us</a></li>
-                        <li class="divider"></li>
                     </ul>
                 </div>
             </div>
