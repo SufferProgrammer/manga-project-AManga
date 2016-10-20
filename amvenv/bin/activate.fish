@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/xdev/Programming/python/mangaproject/website/manga-project-site/AMvenv"
+set -gx VIRTUAL_ENV "/home/xdev/Programming/python/mangaproject/website/manga-project-site/amvenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

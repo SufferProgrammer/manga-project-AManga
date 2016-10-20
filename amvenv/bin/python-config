@@ -1,4 +1,4 @@
-#!/home/xdev/Programming/python/mangaproject/website/manga-project-site/AMvenv/bin/python
+#!/home/xdev/Programming/python/mangaproject/website/manga-project-site/amvenv/bin/python
 
 import sys
 import getopt

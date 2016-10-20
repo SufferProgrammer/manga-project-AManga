@@ -1,4 +1,4 @@
-#!/home/xdev/Programming/python/mangaproject/website/manga-project-site/AMvenv/bin/python3.5
+#!/home/xdev/Programming/python/mangaproject/website/manga-project-site/amvenv/bin/python3.5
 
 # -*- coding: utf-8 -*-
 import re
