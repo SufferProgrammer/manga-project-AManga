@@ -92,3 +92,5 @@ ENV/
 
 .gitignore
 .idea/
+application/database/dbscheme.dbs
+application/database/debug.py

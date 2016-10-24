@@ -1,0 +1,37 @@
+{% include 'head-property.html' %}
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 push-l2">
+                    <h1 class="center-align">Register New Admin</h1>
+                    <form class="col s12 l12" method="post" enctype="multipart/form-data">
+                        <div class="input-field col s12 l7">
+                            <input id="username" name="username" type="text" class="validate black-text" length="30" maxlength=30 required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s12 l7">
+                            <input id="password" name="password" type="password" class="validate black-text" length="40" maxlength=40 required>
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="input-field col s12 l7">
+                            <input id="email" name="email" type="email" class="validate black-text" length="40" maxlength=40 required>
+                            <label for="email" data-error="Invalid Email" data-success="success">Email</label>
+                        </div>
+                        <div class="file-field input-field col s12 l7">
+                            <div class="btn grey">
+                                <span>File</span>
+                                <input type="file" name="image" accept=".jpg, .png, .jpeg">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Profile choose image" name="fileImgName">
+                            </div>
+                        </div>
+                        <div class="input-field col s12 l6 right-align">
+                            <button type="submit" class="btn waves-effect waves-light grey">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </article>
+{% include 'foot-property.html' %}
