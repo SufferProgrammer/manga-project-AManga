@@ -5,7 +5,7 @@ import os
 import time
 
 upload_path = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER =os.path.join(upload_path, 'assets/image/user')
+UPLOAD_FOLDER =os.path.join(upload_path, 'static/upload/image/user')
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = set(['jpg', 'png', 'jpeg'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -53,11 +53,12 @@ def join():
         profImgPath = request.form.get('fileImgName')
         imgPath = 'assets/image/user/%s' %(profImgPath)
         dbMgr = database.UserHandler()
-        dbMgr.insertUser(username, password, email, imgPath, level, status, date)
         image = request.files['image']
         if image and allowed_file(image.filename):
             fileimage = secure_filename(image.filename)
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], fileimage))
+            pathSaveFile = os.path.join(app.config['UPLOAD_FOLDER'], fileimage)
+            dbMgr.insertUser(username, password, email, pathSaveFile, level, status, date)
+            image.save(pathSaveFile)
             return redirect(url_for('index'))
     return render_template('join.html', page = page)
     
