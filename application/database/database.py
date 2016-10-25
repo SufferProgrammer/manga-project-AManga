@@ -6,7 +6,7 @@ class UserHandler():
     """handler for table user management in database"""
     def __init__(self):
         self.TemporaryDbPath = os.path.dirname(os.path.abspath(__file__))
-        self.dbPath = os.path.join(self.TemporaryDbPath, 'database/database.db')
+        self.dbPath = os.path.join(self.TemporaryDbPath, 'database.db')
         self.database = dbase.connect(self.dbPath)
         self.cursor = self.database.cursor()
         
