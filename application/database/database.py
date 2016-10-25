@@ -1,10 +1,13 @@
 import  sqlite3 as dbase
 import hashlib
+import os
 
 class UserHandler():
     """handler for table user management in database"""
     def __init__(self):
-        self.database = dbase.connect('database/database.db')
+        self.TemporaryDbPath = os.path.dirname(os.path.abspath(__file__))
+        self.dbPath = os.path.join(self.TemporaryDbPath, 'database/database.db')
+        self.database = dbase.connect(self.dbPath)
         self.cursor = self.database.cursor()
         
     def commit(self):
