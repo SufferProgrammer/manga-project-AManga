@@ -52,12 +52,12 @@ def join():
         email = request.form.get('email')
         profImgPath = request.form.get('fileImgName')
         imgPath = 'assets/image/user/%s' %(profImgPath)
+        dbMgr = database.UserHandler()
+        dbMgr.insertUser(username, password, email, imgPath, level, status, date)
         image = request.files['image']
         if image and allowed_file(image.filename):
             fileimage = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], fileimage))
-            dbMgr = database.UserHandler()
-            dbMgr.insertUser(username, password, email, imgPath, level, status, date)
             return redirect(url_for('index'))
     return render_template('join.html', page = page)
     
