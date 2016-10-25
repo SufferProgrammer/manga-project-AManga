@@ -1,10 +1,11 @@
-from application.database import database
+from database import database
 from werkzeug import secure_filename
 from flask import *
 import os
 import time
 
-UPLOAD_FOLDER = 'assets/image/user'
+upload_path = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER =os.path.join(upload_path, 'assets/image/user')
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = set(['jpg', 'png', 'jpeg'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
