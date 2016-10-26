@@ -57,7 +57,7 @@ def join():
         if image and allowed_file(image.filename):
             fileimage = secure_filename(image.filename)
             pathSaveFile = os.path.join(app.config['UPLOAD_FOLDER'], fileimage)
-            dbMgr.insertUser(username, password, email, pathSaveFile, level, status, date)
+            dbMgr.insertUser(username, password, email, level, status, date)
             image.save(pathSaveFile)
             return redirect(url_for('index'))
     return render_template('join.html', page = page)
