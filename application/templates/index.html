@@ -106,4 +106,7 @@
                 </section>
             </div>
         </article>
-        {% include 'foot-property.html' %}
+{% include 'foot-property.html' %}
+{% if stat == 'True' %}
+    <script src="{{ url_for('static', filename = 'js/toast.succes.js') }}"></script>
+{% endif %}

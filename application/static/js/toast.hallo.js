@@ -1,0 +1,1 @@
+Materialize.toast('Okaeiri goshujin-sama :3', 5000, 'rounded')

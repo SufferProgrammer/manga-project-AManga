@@ -33,6 +33,10 @@ padd-top{
     margin-top: 20%;
 }
 
+.marg-bt{
+    margin-bottom: 28px;
+}
+
 .side-nav ul {
     padding-top: 20%;
 }

@@ -94,3 +94,6 @@ ENV/
 .idea/
 application/database/dbscheme.dbs
 application/database/debug.py
+amvenv
+requirements.txt
+.requirements.txt.swp
