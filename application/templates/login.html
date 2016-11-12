@@ -1,28 +1,38 @@
 {% include 'head-property.html' %}
 {% include 'parallax-components.html' %}
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col s12 push-l2 card white z-depth-2">
-                <h1 class="center-align">Admin Login</h1>
-                <form class="marg-bt col s12 l12" method="post">
-                    <div class="input-field col s12 l7 push-l2">
-                        <input id="username" name="UoE" type="text" class="validate black-text" length="30" maxlength=30 required>
-                        <label for="username">Email or username</label>
+                        <div class="session white">
+                            <div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col s12 push-l2 card white z-depth-2">
+                                            <h1 class="center-align">Admin Login</h1>
+                                            <form class="marg-bt col s12 l12" method="post">
+                                                <div class="input-field col s12 l7 push-l2">
+                                                    <input id="username" name="UoE" type="text" class="validate black-text" length="30" maxlength=30 required>
+                                                    <label for="username">Email or username</label>
+                                                </div>
+                                                <div class="input-field col s12 l7 push-l2">
+                                                    <input id="password" name="pwd" type="password" class="validate black-text" length="40" maxlength=40 required>
+                                                    <label for="password">Password</label>
+                                                </div>
+                                                <div class="input-field col s12 l7 push-l2 right-align">
+                                                    <button type="submit" class="btn waves-effect waves-light grey">Login</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field col s12 l7 push-l2">
-                        <input id="password" name="pwd" type="password" class="validate black-text" length="40" maxlength=40 required>
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="input-field col s12 l7 push-l2 right-align">
-                        <button type="submit" class="btn waves-effect waves-light grey">Login</button>
-                    </div>
-                </form>
+                </section>
             </div>
-        </div>
-    </div>
-</article>
+        </article>
 {% include 'foot-property.html' %}
 {% if status == 0 %}
     <script src="{{ url_for('static', filename = 'js/toast.login-failed.js') }}"></script>
+{% elif status == 'On' %}
+    <script src="{{ url_for('static', filename = 'js/toast.user-on.js') }}"></script>
+{% elif status == 'sessTrue' %}
+    <script src="{{ url_for('static', filename = 'js/toast.already-login.js') }}"></script>
 {% endif %}

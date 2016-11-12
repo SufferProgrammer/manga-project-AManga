@@ -1,0 +1,1 @@
+Materialize.toast('User is already logged in !!!', 5000, 'rounded')

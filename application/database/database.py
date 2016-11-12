@@ -28,7 +28,8 @@ class UserHandler():
         
     def getU_id(self, username, password):
         """Returning user id in integer"""
-        converted = bytes(password, 'utf-32')
+        passwd = password
+        converted = bytes(passwd, 'utf-32')
         SHA512protector = hashlib.sha512(converted).hexdigest()
         command = 'SELECT u_id FROM user WHERE username = "%s" AND password = "%s"' %(username, SHA512protector)
         self.execute(command)
@@ -57,9 +58,9 @@ class UserHandler():
         elif self.checkIfAvailable == True:
             return False
             
-    def suspendUser(self, username, password, email):
+    def suspendUser(self, username, password):
         """Admin Function for suspending account"""
-        self.targetForSuspend = self.getU_id(username, password, email)
+        self.targetForSuspend = self.getU_id(username, password)
         command = 'DELETE FROM user WHERE u_id = "%s" LIMIT 1' %(self.targetForSuspend)
         self.execute(command)
         self.commit()
@@ -81,9 +82,33 @@ class UserHandler():
         self.execute(command)
         self.resultRaw = self.cursor.fetchone()
         self.result = int(''.join(map(str, self.resultRaw)))
-        print(self.result)
         return self.result
-    
+
+    def userStatusOn(self, U_id):
+        command = 'UPDATE user SET user_status = 1 WHERE u_id = %s' %(U_id)
+        self.execute(command)
+        self.commit()
+        self.exitDatabase()
+
+    def userStatusOff(self, U_id):
+        command = 'UPDATE user SET user_status = 0 WHERE u_id = %s' %(U_id)
+        self.execute(command)
+        self.commit()
+        self.exitDatabase()
+
+    def getAdminList(self):
+        command = 'SELECT * FROM user'
+        self.execute(command)
+        self.result = self.cursor.fetchall()
+        return self.result
+
+    def checkOnOffAdmin(self, U_id):
+        command = 'SELECT user_status FROM user WHERE u_id = %s' %(U_id)
+        self.execute(command)
+        self.resultRaw = self.cursor.fetchone()
+        self.result = int(''.join(map(str, self.resultRaw)))
+        return self.result
+
     def exitDatabase(self):
         """closing database connection"""
         self.database.close()

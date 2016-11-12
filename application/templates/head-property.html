@@ -19,8 +19,15 @@
                     <div class="container">
                         <div class="row">
                             <a href="/" data-activates="sidemed" class="button-collapse"><i class="material-icons">menu</i></a>
-                            <ul class="right hide-on-med-and-down">
-                                <li>
+                            <ul class="left col push-l2">
+                                {% if session.get('username') != None and session.get('password') != None %}
+                                    <li>
+                                        <a href="/admin_dashboard" class="tooltipped custom-hover" data-position="bottom" data-delay="50" data-tooltip="Go to dashboard"><i class="material-icons trans">dashboard</i></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                            <ul class="right">
+                                <li class="hide-on-med-and-down">
                                     <form method="get" action="/search">
                                         <div class="input-field">
                                             <input id="searh_anim" type="text" class="validate white-text" name="s">
@@ -28,6 +35,11 @@
                                         </div>
                                     </form>
                                 </li>
+                                {% if session.get('username') != None and session.get('password') != None %}
+                                    <li>
+                                        <a href="/logout" class="tooltipped custom-hover-power" data-position="bottom" data-delay="50" data-tooltip="Log out"><i class="material-icons trans">power_settings_new</i></a>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -63,8 +75,11 @@
                             </form>
                         </li>
                         <li class="header left-align white"><div class="container">Team</div></li>
-                        <li><a href="/admin/list">Admin</a></li>
                         <li><a href="/">Report</a></li>
+                        <li><a href="/admin/list">Admin List</a></li>
+                        {% if session.get('username') == None and session.get('password') == None %}
+                            <li><a href="/login">Admin login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

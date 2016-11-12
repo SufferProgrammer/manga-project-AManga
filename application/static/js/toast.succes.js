@@ -1,1 +1,0 @@
-Materialize.toast('Admin register success !!!', 3000, 'rounded')

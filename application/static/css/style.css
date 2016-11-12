@@ -17,6 +17,10 @@
     color: white;
 }
 
+nav .input-field input[type=text]{
+    width: 200px;
+}
+
 cus-col:focus{
     color: #26c6da;
 }
@@ -74,32 +78,106 @@ padd-top{
 
 .youtube{
     color: red;
+    transition-duration: 0.3s;
 }
 
+.youtube:hover{
+    color: white;
+    transition-duration: 0.3s;
+}
 .gplus{
     color: #ff3d00;
+    transition-duration: 0.3s;
+}
+
+.gplus:hover{
+    color: white;
+    transition-duration: 0.3s;
 }
 
 .skype{
     color: #0288d1;
+    transition-duration: 0.3s;
+}
+
+.skype:hover{
+    color: white;
+    transition-duration: 0.3s;
 }
 
 .insta{
     color: #cd486b;
+    transition-duration: 0.3s;
+}
+
+.insta:hover{
+    color: white;
+    transition-duration: 0.3s;
 }
 
 .twit{
     color: #4fc3f7;
+    transition-duration: 0.3s;
+}
+
+.twit:hover{
+    color: white;
+    transition-duration: 0.3s;
 }
 
 .wassap{
     color: #00c853;
+    transition-duration: 0.3s;
+}
+
+.wassap:hover{
+    color: white;
+    transition-duration: 0.3s;
+}
+
+.fb{
+    transition-duration: 0.3s;
+}
+
+.fb:hover{
+    color: white;
+    transition-duration: 0.3s;
 }
 
 .online{
     color: #64dd17;
 }
 
+.custom-hover{
+    color: #ffffff;
+}
+
+.custom-hover:hover{
+    color: #000000;
+    background-color: initial;
+}
+
+.custom-hover-power{
+    color: #ffffff;
+}
+
+.toast-style{
+    text-decoration: underline;
+}
+
+.custom-hover-power:hover{
+    color: #d32f2f;
+    background-color: initial;
+}
+
+.trans{
+    transition-duration: 0.3s;
+}
+.trans:hover{
+    transition-duration: 0.3s;
+}
+
+/* screen media queries */
 @media (min-width: 1px) and (max-width: 992px) {
    .text-cent{
         text-align: center;
@@ -117,4 +195,20 @@ padd-top{
     .margin-left-form{
         margin-left: 150px;
     }
+}
+
+/*Scroll bar style*/
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.10);
+    background-color: initial;
+}
+
+*::-webkit-scrollbar{
+    width: 6px;
+    background-color: initial;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 1.5px;
+	background-color: rgba(0,0,0,0.3);
 }

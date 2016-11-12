@@ -6,26 +6,17 @@
                 <div class="col s12 push-l2">
                     <ul class="collection with-header">
                         <li class="collection-header"><h4 class="center-align">Admin member</h4></li>
+                        {% for list in result %}
                         <li class="collection-item">
-                            <span>Admin 1</span>
-                            <a href="#" class="secondary-content"><i class="material-icons">mail</i></a>
-                            <a href="#" class="secondary-content offline"><i class="material-icons">account_circle</i></a>
+                            <span>{{ list[1] }}</span>
+                            <a href="mailto:{{ list[3] }}" class="secondary-content tooltipped" data-position="bottom" data-delay="50" data-tooltip="Say Hi to {{ list[1] }}"><i class="material-icons">mail</i></a>
+                            {% if list[6] != 0 %}
+                                <a href="#" class="secondary-content online tooltipped" data-position="left" data-delay="50" data-tooltip="{{ list[1] }} is online"><i class="material-icons">account_circle</i></a>
+                            {% elif list[6] == 0 %}
+                                <a href="#" class="secondary-content offline tooltipped" data-position="left" data-delay="50" data-tooltip="{{ list[1] }} is offline"><i class="material-icons">account_circle</i></a>
+                            {% endif %}
                         </li>
-                        <li class="collection-item">
-                            <span>Admin 2</span>
-                            <a href="#" class="secondary-content"><i class="material-icons">mail</i></a>
-                            <a href="#" class="secondary-content online"><i class="material-icons">account_circle</i></a>
-                        </li>
-                        <li class="collection-item">
-                            <span>Admin 3</span>
-                            <a href="#" class="secondary-content"><i class="material-icons">mail</i></a>
-                            <a href="#" class="secondary-content offline"><i class="material-icons">account_circle</i></a>
-                        </li>
-                        <li class="collection-item">
-                            <span>Admin 4</span>
-                            <a href="#" class="secondary-content"><i class="material-icons">mail</i></a>
-                            <a href="#" class="secondary-content offline"><i class="material-icons">account_circle</i></a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

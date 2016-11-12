@@ -1,15 +1,117 @@
 {% include 'head-property.html' %}
 {% include 'parallax-components.html' %}
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col s12 l12 push-l2">
-                <a href="/logout" class="btn waves-effect waves-light grey">
-                    Log out
-                </a>
+                        <div class="section white">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col s12 l12 push-l2">
+                                        <h3 class="right-align">{{ user }}'s Dashboard</h3>
+                                        <ul class="collapsible" data-collapsible="accordion">
+                                            <li>
+                                                <div class="collapsible-header"><h5 class="center-align">User management</h5></div>
+                                                <div class="collapsible-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col s12 l6 pull-l1">
+                                                                <div class="card white">
+                                                                    <ul class="collection with-header">
+                                                                        <li class="collection-header"><h5>Newest user</h5></li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12 l6 push-l1">
+                                                                <div class="card white">
+                                                                    <ul class="collection with-header">
+                                                                        <li class="collection-header"><h5>Active user</h5></li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                        <li class="collection-item">Test</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header active"><h5 class="center-align">Content management</h5></div>
+                                                <div class="collapsible-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col s12 l6 pull-l1">
+                                                                <div class="card white">
+                                                                    <ul class="collection with-header">
+                                                                        <li class="collection-header"><h5>Newest Upload</h5></li>
+                                                                        <li class="collection-item">News</li>
+                                                                        <li class="collection-item">Anime</li>
+                                                                        <li class="collection-item">Manga</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12 l6 push-l1">
+                                                                <div class="card white">
+                                                                    <ul class="collection with-header">
+                                                                        <li class="collection-header"><h5>Popular Upload</h5></li>
+                                                                        <li class="collection-item">News</li>
+                                                                        <li class="collection-item">Anime</li>
+                                                                        <li class="collection-item">Manga</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header"><h5 class="center-align">Report list</h5></div>
+                                                <div class="collapsible-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col s12 l6 pull-l1">
+                                                                <div class="card white">
+                                                                    <span>Test</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12 l6 push-l1">
+                                                                <div class="card white">
+                                                                    <span>Test</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header"><h5 class="center-align">Message</h5></div>
+                                                <div class="collapsible-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col s12 l6 pull-l1">
+                                                                <div class="card white">
+                                                                    <span>Test</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12 l6 push-l1">
+                                                                <div class="card white">
+                                                                    <span>Test</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
-    </div>
-</article>
+        </article>
 {% include 'foot-property.html' %}
 <script src="{{ url_for('static', filename = 'js/toast.hallo.js') }}"></script>

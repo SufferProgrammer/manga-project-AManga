@@ -91,8 +91,8 @@ def join():
                 result = dbMgr.insertUser(username, password, email, imgPath, level, status, dateToday)
                 if result == True:
                     imageSave.save(pathSaveFile)
-                    stat = request.args.get('status', result)
-                    return redirect(url_for('index', reg_status = stat))
+                    stat = True
+                    return render_template('join.html', page=page, status = stat, image = image)
 
                 elif result == False:
                     stat = request.args.get('status', result)
@@ -164,15 +164,38 @@ def login():
         login = database.UserHandler()
         result = login.getU_id(usernameOrEmail, password)
         if result != 0:
-            session['username'] = usernameOrEmail
-            session['password'] = password
             databaseU_levelExamine = database.UserHandler()
             levelExamineResult = databaseU_levelExamine.userLevel(result)
             if levelExamineResult == 0:
-                return redirect(url_for('owner'))
-            elif levelExamineResult > 0:
-                return redirect(url_for('admin'))
-
+                checkUserStatus = database.UserHandler()
+                checkLogInStatus = session.get('username')
+                if checkUserStatus.checkOnOffAdmin(result) == 0:
+                    if checkLogInStatus == None:
+                        session['username'] = usernameOrEmail
+                        session['password'] = password
+                        setOnStatus = database.UserHandler()
+                        setOnStatus.userStatusOn(result)
+                        return redirect(url_for('owner'))
+                    elif checkLogInStatus != None:
+                        return redirect(url_for('owner'))
+                elif checkUserStatus.checkOnOffAdmin(result) == 1:
+                    status = 'On'
+                    return render_template('login.html', page=page, image=image, status=status)
+            elif levelExamineResult == 2:
+                checkUserStatus = database.UserHandler()
+                checkLogInStatus = session.get('username')
+                if checkUserStatus.checkOnOffAdmin(result) == 0:
+                    if checkLogInStatus == None:
+                        session['username'] = usernameOrEmail
+                        session['password'] = password
+                        setOnStatus = database.UserHandler()
+                        setOnStatus.userStatusOn(result)
+                        return redirect(url_for('admin'))
+                    elif checkLogInStatus != None:
+                        return redirect(url_for('admin'))
+                elif checkUserStatus.checkOnOffAdmin(result) == 1:
+                    status = 'On'
+                    return render_template('login.html', page=page, image=image, status=status)
         else:
             status = int(0)
             return render_template('login.html', page=page, image=image, status = status)
@@ -180,19 +203,25 @@ def login():
 
 @app.route('/admin_dashboard')
 def admin():
-    userLogin = session.get('username')
-    if userLogin != None:
-        page = ('Osu %s') % userLogin
-        return render_template('admin.html', page = page)
+    if session.get('username') != None and session.get('password') != None:
+        userLogin = session.get('username')
+        password = session.get('password')
+        checkStat = database.UserHandler()
+        userId = checkStat.getU_id(userLogin, password)
+        if checkStat.userLevel(userId) == 2:
+            page = ('Osu %s') % userLogin
+            return render_template('admin.html', page = page)
+        elif checkStat.userLevel(userId) == 0:
+            return redirect(url_for('owner'))
     else:
         abort(403)
 
 @app.route('/mighty_owners')
 def owner():
-    if session.get('username') == 'owner':
+    if session.get('username') != None:
         page = 'Onii-chan Okaeiri :3'
-        image = 'images/web/background-old.jpg'
-        return render_template('owner.html', page = page, image = image)
+        user = session.get('username')
+        return render_template('owner.html', page = page, user = user)
     else:
         abort(403)
 
@@ -200,10 +229,18 @@ def owner():
 def adminlist():
     page = 'Admin list'
     image = 'images/web/dev4.jpg'
-    return render_template('adminlist.html', page = page, image = image)
+    adminList = database.UserHandler()
+    examine = adminList.getAdminList()
+
+    return render_template('adminlist.html', page = page, image = image, result = examine)
 
 @app.route('/logout')
 def logout():
+    username = session.get('username')
+    password = session.get('password')
+    statusSetAndCheck = database.UserHandler()
+    userTarget = statusSetAndCheck.getU_id(username, password)
+    statusSetAndCheck.userStatusOff(userTarget)
     session.pop('username', None)
     session.pop('password', None)
     return redirect(url_for('login'))
